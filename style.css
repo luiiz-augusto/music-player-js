@@ -1,0 +1,348 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", sans-serif;
+}
+
+/*.corpo */
+body{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(wallpaperm.jpeg);
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center center;
+  backdrop-filter: blur(5px);
+}
+
+
+/*.o plano de fundo do music player */
+.main{
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  height: 450px;
+  width: 300px;
+  border: none;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+/*parte do botoes de cima */
+.main .btn-topo{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+/* formato dos botões de cima*/
+.main .btn-topo button {
+  position: relative;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/*formatação do icone dos botões de cima */
+.main .btn-topo button .bx{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/*. configuração do botao do lado esquerda cima  */
+.main .btn-topo .options{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(-60px);
+	transition: 0.3s;
+  overflow: hidden;
+	position: relative;
+} 
+
+/*bolinha do volume*/
+#vol::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: #f400a1;
+    cursor: pointer;
+}
+
+/*barra do volume*/
+.main .btn-topo .options #vol{
+  -webkit-appearance: none;
+  background: #d3d3d3;
+  outline: none;
+  height: 5px;
+  border-radius: 9px;
+}
+
+/*quando é ativado no js */
+.main .btn-topo .active2{
+	transform: translateY(0px);
+}
+
+/* botão esquerdo cima*/
+.main .btn-topo .options button{
+  margin: 5px;
+}
+
+/* quando passa o por cima ou clica */
+button:hover,
+button:active{
+  background: linear-gradient(45deg,#f400a1,#f400a1,#000000);
+  transition: all 0.5s ease;
+  color: #fff;
+}
+
+/*titulo do music player */
+.main .titulo-music h3{
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/*. configuração do meio */
+.main .meio{
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+/* config. da imagem / formatação */
+.main .meio .img{
+ height: 130px;
+ width: 130px;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ object-fit: cover;
+ margin-top: 15px;
+ position: relative;
+ box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+ border: 2px solid #fff;
+ 
+}
+
+/* form. da parte do nome de artista*/
+.main .meio1{
+  position: relative;
+  display: grid;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* config. do título */
+.main .meio1 #title{
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
+
+/* confif. do artist*/
+.main .meio1 #artist{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* form. do contagem da musica*/
+.main .btn-final{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+}
+
+/* formt. dos botões*/
+.main .btn-final button{
+  position: relative;
+  height: 35px;
+  width: 35px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* config. do icone dos botoes de baixo */
+.main .btn-final button .bx{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+/*format. da barra de progresso do tempo */
+.main .barra{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* format. da barra de progresso do tempo*/
+.main .progress_duration{
+  background: rgba(255, 255, 255, 0.5);
+  height: 4px;
+  border-radius: 5px;
+  position: relative;
+  display:flex;
+  width: 95%;
+  margin: 5px 10px;
+  cursor: pointer;
+  color: #FF0707;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*config. da barra / design */
+.main .progress_duration .progress{
+  background: linear-gradient(45deg,#f400a1,#f400a1,#000000);
+  height: 100%;
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.1s linear ;
+  cursor: pointer;
+}
+
+/* format. parte da music list */
+.music_list{
+  position: absolute;
+  width: 100%;
+  bottom: -55%;
+  opacity: 0;
+  pointer-events: none;
+  left: 0;
+  box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+  z-index: 5;
+  padding: 20px 20px;
+  border-radius: 15px;
+  background:#fff;
+  transition: all 0.5s ease-in-out;
+}
+
+/* quando ativa no js*/
+.music_list.active{
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* parte do ul do music list */
+.music_list ul{
+  margin-top: 10px 0;
+  max-height: 180px;
+  overflow: auto;
+}
+
+/*config. da music list parte de li */
+.music_list ul li{
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  padding-bottom: 5px;
+  margin-bottom: 18px;
+  color: #000000;
+  border-bottom:  1px solid #e5e5e5;
+  justify-content: space-between;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+/*config. da ultima li  */
+.music_list ul li:last-child{
+  border-bottom: 0px;
+}
+
+/* parte de span da music list*/
+.music_list ul li .row span{
+  font-size: 14px;
+}
+
+/* parte do p da music list  */
+.music_list ul li .row p{
+  opacity: 0.65;
+  
+}
+
+/* quando muda no js  */
+ul li .audio-duration{
+  font-size: 14px;
+  margin-top: 30px;
+}
+ 
+ /* config. da parte de cima do music list */
+.header .row{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #000;
+  padding:10px 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  justify-content: center;
+  
+}
+ 
+ /* config. parte do icone do simbolo de musica */
+.header .row i{
+  cursor: default;
+  border-radius: 50%;
+  border:none;
+  padding: 5px;
+  margin-left: 12px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* parte do título music list */
+.header .row span{
+  margin-left: 5px;
+}
+
+/*para nao aparecer scroll na music list  */
+.music_list ul::-webkit-scrollbar{
+  width: 0;
+}
+
+/* quando passa por cima daa musica das music list*/
+.music_list ul li:hover{
+  background: linear-gradient(45deg,#2b97fa,#2b97fa, #000000);
+  color: #fff;
+  
+}
+
+/* quando muda no js  */
+ul li.playing{
+  pointer-events: none;
+   font-weight: 500;
+  background: linear-gradient(45deg, #f400a1, #f400a1, #000000);
+  color: #fff;
+}
